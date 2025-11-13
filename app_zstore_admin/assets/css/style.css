@@ -1,0 +1,231 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #083a4f 0%, #0f4c5c 50%, #1a5f7a 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+    position: relative;
+}
+
+/* Container */
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 30px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(135deg, #0a4d68 0%, #1a5f7a 100%);
+}
+
+thead tr th {
+    padding: 18px 15px;
+    text-align: left;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #e8f4f8;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(10, 77, 104, 0.15);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody td {
+    padding: 16px 15px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+tbody td:first-child {
+    font-weight: 600;
+    color: #1a5f7a;
+}
+
+/* Price Styling */
+tbody td:nth-child(4) {
+    font-weight: 600;
+    color: #2ecc71;
+}
+
+/* Image URL Column */
+tbody td:nth-child(5) {
+    font-size: 0.85rem;
+    color: #999;
+    font-family: 'Courier New', monospace;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Action Links */
+tbody td:last-child a {
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+tbody td:last-child a:first-child {
+    background: #e8eaff;
+}
+
+tbody td:last-child a:first-child:hover {
+    background: #667eea;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+tbody td:last-child a:last-child {
+    background: #ffe8e8;
+    color: #e74c3c;
+}
+
+tbody td:last-child a:last-child:hover {
+    background: #e74c3c;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Add Button */
+.add-btn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+    transition: all 0.3s ease;
+    text-align: center;
+    z-index: 1000;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 180, 216, 0.6);
+}
+
+.add-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    table {
+        font-size: 0.9rem;
+    }
+    
+    thead tr th,
+    tbody td {
+        padding: 12px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        padding-top: 40px;
+    }
+    
+    .add-btn {
+        top: 20px;
+        right: 20px;
+        padding: 12px 24px;
+        font-size: 0.85rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    thead tr th,
+    tbody td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    
+    tbody td:nth-child(5) {
+        max-width: 150px;
+    }
+}
+
+/* Empty State */
+tbody tr:only-child td {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+table {
+    animation: fadeIn 0.6s ease;
+}
+
+.add-btn {
+    animation: fadeIn 0.8s ease;
+}
